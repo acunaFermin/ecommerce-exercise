@@ -1,0 +1,19 @@
+.container {
+  position: relative;
+  top: 100px;
+}
+.card-img-top {
+  object-fit: contain;
+  width: 90%;
+  height: 150px;
+}
+
+.card-title {
+  font-size: 15px;
+}
+.botones {
+  display: flex;
+  height: 50px;
+  justify-content: space-around;
+  align-items: center;
+}

@@ -1,0 +1,44 @@
+<div class="container">
+  <form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label"
+        >Ingrese su nombre</label
+      >
+      <input
+        name="nombre"
+        [(ngModel)]="nombre"
+        type="email"
+        class="form-control"
+        aria-describedby="emailHelp"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label"
+        >Ingrese su correo</label
+      >
+      <input
+        name="correo"
+        [(ngModel)]="correo"
+        type="email"
+        class="form-control"
+        aria-describedby="emailHelp"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"
+        >Ingrese su contraseña</label
+      >
+      <input
+        [(ngModel)]="pass"
+        name="pass"
+        type="password"
+        class="form-control"
+      />
+    </div>
+    <h5 *ngIf="condicion">Usuario y contraseña no válidos</h5>
+
+    <button type="submit" class="btn btn-primary" (click)="login()">
+      Login!
+    </button>
+  </form>
+</div>

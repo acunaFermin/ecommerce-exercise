@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="tarjetas" *ngFor="let prod of productos; let i = index">
+    <div class="card" style="width: 18rem">
+      <img src="{{ prod.thumbnail }}" class="card-img-top" alt="fotito" />
+      <div class="card-body">
+        <h5 class="card-title">{{ prod.title }}</h5>
+      </div>
+      <div class="list-group list-group-flush">
+        <li class="list-group-item">{{ prod.price | currency }}</li>
+
+        <div class="botones">
+          <div class="boton">
+            <button
+              class="btn btn-secondary boton"
+              routerLink="/productos/{{ prod.id }}"
+            >
+              Ver Detalle
+            </button>
+          </div>
+
+          <div class="boton">
+            <button class="btn btn-danger" (click)="borrar(i)">BORRAR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

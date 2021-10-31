@@ -1,0 +1,60 @@
+<div class="container">
+  <form [formGroup]="myForm">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label"
+        >Ingrese su nombre</label
+      >
+      <input
+        type="email"
+        class="form-control"
+        aria-describedby="emailHelp"
+        formControlName="nombre"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label"
+        >Ingrese su correo</label
+      >
+
+      <input
+        type="email"
+        class="form-control"
+        aria-describedby="emailHelp"
+        formControlName="correo"
+      />
+      <h5 *ngIf="validacion">Este correo ya se encuentra registrado</h5>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"
+        >Ingrese su contraseña</label
+      >
+      <input
+        type="password"
+        class="form-control"
+        formControlName="contrasena"
+      />
+
+      <span
+        *ngIf="
+          myForm.get('contrasena')?.errors && myForm.get('contrasena')?.dirty
+        "
+      >
+        <span *ngIf="myForm.get('contrasena')?.hasError('required')">
+          *el campo es obligatorio
+        </span>
+        <span *ngIf="myForm.get('contrasena')?.hasError('minlength')">
+          *ingrese una contraseña de 6 caracteres o mas, plis.
+        </span>
+      </span>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="myForm.invalid"
+      (click)="registro_()"
+    >
+      Registrarse!
+    </button>
+  </form>
+</div>
